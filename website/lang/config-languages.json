@@ -1,0 +1,15 @@
+{
+    "defaultLang":"pl",
+    "supported_languages":[
+        {
+            "code":"pl",
+            "full_name":"Polski / Polish",
+            "icon":"./imgs/country_flags/poland.png"
+        },
+        {
+            "code":"en",
+            "full_name":"Angielski / English",
+            "icon":"./imgs/country_flags/united-states.png"
+        }
+    ]
+}

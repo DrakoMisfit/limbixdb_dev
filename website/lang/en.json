@@ -1,0 +1,44 @@
+{
+    "flag_icon":"./imgs/united-states.png",
+    "LOGIN_PAGE":{
+        "title_website":"Login to the system",
+        "content_lang":[
+            {
+                "element_type":"div",
+                "translate_id":"title-form-login",
+                "value":"Login to the system",
+                "placeholder":null
+            },
+            {
+                "element_type":"input-placeholder",
+                "translate_id":"login-form-input-email",
+                "value":null,
+                "placeholder":"Your login..."
+            },
+            {
+                "element_type":"input-placeholder",
+                "translate_id":"password-form-input-email",
+                "value":null,
+                "placeholder":"Your password..."
+            },
+            {
+                "element_type":"div",
+                "translate_id":"incorrect-login-auth-message",
+                "value":"Incorrect login details.",
+                "placeholder":null
+            },
+            {
+                "element_type":"button",
+                "translate_id":"login-user-button",
+                "value":"LogIn",
+                "placeholder":null
+            }
+        ]
+    },
+    "APP_PAGE":{
+        "title_website":"SMARTHOME",
+        "content_lang":[
+            
+        ]
+    }
+}

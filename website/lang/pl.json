@@ -1,0 +1,44 @@
+{
+    "flag_icon":"./imgs/poland.png",
+    "LOGIN_PAGE":{
+        "title_website":"Logowanie do systemu",
+        "content_lang":[
+            {
+                "element_type":"div",
+                "translate_id":"title-form-login",
+                "value":"Zaloguj się do systemu",
+                "placeholder":null
+            },
+            {
+                "element_type":"input-placeholder",
+                "translate_id":"login-form-input-email",
+                "value":null,
+                "placeholder":"Twój login..."
+            },
+            {
+                "element_type":"input-placeholder",
+                "translate_id":"password-form-input-email",
+                "value":null,
+                "placeholder":"Twoje hasło..."
+            },
+            {
+                "element_type":"div",
+                "translate_id":"incorrect-login-auth-message",
+                "value":"Niepoprawne dane logowania.",
+                "placeholder":null
+            },
+            {
+                "element_type":"button",
+                "translate_id":"login-user-button",
+                "value":"Zaloguj się",
+                "placeholder":null
+            }
+        ]
+    },
+    "APP_PAGE":{
+        "title_website":"---",
+        "content_lang":[
+            
+        ]
+    }
+}
