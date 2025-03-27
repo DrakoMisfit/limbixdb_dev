@@ -17,6 +17,9 @@ class CloudEngine{
             this.addPlugin(plugin.js,plugin.class,plugin.css)
         });
         delete this.pluginsList;
+
+        this.#InitLoaderApp();
+        
     }
     addPlugin(scriptName,className,cssFilename)
     {
@@ -66,6 +69,24 @@ class CloudEngine{
         document.title=title;
     }
 
+    // GŁówny loader aplikacji.
+    async #InitLoaderApp()
+    {
+        this.loaderWindow=document.createElement("div");
+        this.loaderWindow.id="main-loader-container";
+        this.loaderWindow.style.display="none";
+        this.loaderWindow.innerHTML=`
+            <div class="tiles-cotainer">
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+            </div>
+        `;
+        document.querySelector("body #root-loader").appendChild(this.loaderWindow)
+
+        return 0;
+    }
     static Plugin = class Plugin {
         constructor() {
             this.engine=null;

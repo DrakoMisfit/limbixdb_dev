@@ -38,11 +38,13 @@ class AUTH_USERS extends CloudEngine.Plugin{
                 }
                 else{
                     this.parent.querySelector(".error-login").style.visibility="hidden";
+                    this.rootLoader.querySelector("div").style.display="block";
                     this.parent.innerHTML=null;
                 }
         }).catch(err=>{
-            console.log(err);
+            // console.log(err);
             console.log("%cError with connecting to RestAPI!","color:#ff0000;font-size:20px");
+            alert("Error with connecting to RestAPI!");
         });
     }
 }
