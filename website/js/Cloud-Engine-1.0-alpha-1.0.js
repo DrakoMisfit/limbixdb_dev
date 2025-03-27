@@ -18,10 +18,6 @@ class CloudEngine{
         });
         delete this.pluginsList;
     }
-    addUtils(scriptName,className)
-    {
-        // cooming soon.
-    }
     addPlugin(scriptName,className,cssFilename)
     {
         return new Promise((resolve, reject) => {
@@ -39,17 +35,16 @@ class CloudEngine{
                 script.onload = () => {
                     this.plugins[className]=eval(`new ${className}()`);
                     this.plugins[className].engine=globalThis.cloudEngine;
+                    this.plugins[className].parent=document.querySelector("body div#root");
+                    this.plugins[className].rootLoader=document.querySelector("body div#root-loader");
+                    this.plugins[className].InitModule();
                     resolve();
                 }
                 script.onerror = () => reject(
-                    //new Error(`Failed to load script: ${url}`)
                     console.log(`Can't load plugin: %c${scriptName}.js`,"color:#ff0000")
                 );
-                // script.onload=()=>{
-                //     console.log(`Loaded plugin: %c${scriptName}.js`,"color:#20c000")
-                // }
                 document.head.appendChild(script);
-                    console.log(`Loaded plugin: %c${scriptName}.js`,"color:#20c000")
+                console.log(`Loaded plugin: %c${scriptName}.js`,"color:#20c000")
             }
             
         });
@@ -73,8 +68,9 @@ class CloudEngine{
 
     static Plugin = class Plugin {
         constructor() {
-            this.engine=undefined;
-            this.parent=document.querySelector("#root")
+            this.engine=null;
+            this.parent=null;
+            this.rootLoader=null;
         }
         async GetHTMLtemplate(src)
         {

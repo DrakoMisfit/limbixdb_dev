@@ -1,15 +1,13 @@
 class TRANSLATOR extends CloudEngine.Plugin{
-    constructor(engine)
+    constructor()
     {
         super();
-        this.engine=engine;
         this.actualLangContent=null;
         this.selectedLang=null;
         this.defaultLang=null;
         this.langList=null;
-        this.#InitModule();
     }
-    async #InitModule(){
+    async InitModule(){
         let langList=await(await fetch("./lang/config-languages.json")).json();
         let langContent=await(await fetch(`./lang/${langList.defaultLang}.json`)).json();
         this.langList=langList;

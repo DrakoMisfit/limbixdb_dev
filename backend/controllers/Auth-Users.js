@@ -7,11 +7,9 @@ const LoginUser=async(req,res)=>{
     let reqData=req.body;
     let result_data_obj={
         user_id:null,
-        // first_name:null,
-        // last_name:null,
         user_email:null,
         user_level_permissions:null,
-        user_perrmision:{
+        user_perrmisions:{
 
         }
     }
@@ -21,10 +19,9 @@ const LoginUser=async(req,res)=>{
     let result_user_data=await connection.query(query_user_data);
     if(result_user_data.length==0)
     {
-        res.status(401).json({
-            status:401,
-            message:"Unauthorized",
-            data:null
+        res.status(200).json({
+            status:200,
+            message:"Unauthorized"
         });
     }
     else{
